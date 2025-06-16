@@ -271,11 +271,13 @@ Makefile: ..\..\Ec_Order_processing_System.pro D:\Qt\6.8.2\msvc2022_64\mkspecs\w
 		..\..\Ec_Order_processing_System.pro \
 		D:\Qt\6.8.2\msvc2022_64\lib\Qt6Widgets.prl \
 		D:\Qt\6.8.2\msvc2022_64\lib\Qt6Gui.prl \
+		D:\Qt\6.8.2\msvc2022_64\lib\Qt6Sql.prl \
 		D:\Qt\6.8.2\msvc2022_64\lib\Qt6Core.prl \
 		D:\Qt\6.8.2\msvc2022_64\lib\Qt6EntryPoint.prl \
 		D:\Qt\6.8.2\msvc2022_64\mkspecs\features\build_pass.prf \
 		D:\Qt\6.8.2\msvc2022_64\lib\Qt6Widgetsd.prl \
 		D:\Qt\6.8.2\msvc2022_64\lib\Qt6Guid.prl \
+		D:\Qt\6.8.2\msvc2022_64\lib\Qt6Sqld.prl \
 		D:\Qt\6.8.2\msvc2022_64\lib\Qt6Cored.prl \
 		D:\Qt\6.8.2\msvc2022_64\lib\Qt6EntryPointd.prl
 	$(QMAKE) -o Makefile ..\..\Ec_Order_processing_System.pro -spec win32-msvc "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -466,11 +468,13 @@ D:\Qt\6.8.2\msvc2022_64\mkspecs\features\lex.prf:
 ..\..\Ec_Order_processing_System.pro:
 D:\Qt\6.8.2\msvc2022_64\lib\Qt6Widgets.prl:
 D:\Qt\6.8.2\msvc2022_64\lib\Qt6Gui.prl:
+D:\Qt\6.8.2\msvc2022_64\lib\Qt6Sql.prl:
 D:\Qt\6.8.2\msvc2022_64\lib\Qt6Core.prl:
 D:\Qt\6.8.2\msvc2022_64\lib\Qt6EntryPoint.prl:
 D:\Qt\6.8.2\msvc2022_64\mkspecs\features\build_pass.prf:
 D:\Qt\6.8.2\msvc2022_64\lib\Qt6Widgetsd.prl:
 D:\Qt\6.8.2\msvc2022_64\lib\Qt6Guid.prl:
+D:\Qt\6.8.2\msvc2022_64\lib\Qt6Sqld.prl:
 D:\Qt\6.8.2\msvc2022_64\lib\Qt6Cored.prl:
 D:\Qt\6.8.2\msvc2022_64\lib\Qt6EntryPointd.prl:
 qmake: FORCE

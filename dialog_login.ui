@@ -105,7 +105,7 @@
     <string>注册</string>
    </property>
   </widget>
-  <widget class="QRadioButton" name="radioButton_custmer">
+  <widget class="QRadioButton" name="radioButton_customer">
    <property name="geometry">
     <rect>
      <x>140</x>

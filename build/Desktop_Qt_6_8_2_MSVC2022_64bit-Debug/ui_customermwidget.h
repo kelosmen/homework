@@ -32,7 +32,7 @@ public:
 
     void retranslateUi(QWidget *CustomerMWdiget)
     {
-        CustomerMWdiget->setWindowTitle(QCoreApplication::translate("CustomerMWdiget", "Form", nullptr));
+        CustomerMWdiget->setWindowTitle(QCoreApplication::translate("CustomerMWdiget", "\351\241\276\345\256\242\347\225\214\351\235\242", nullptr));
     } // retranslateUi
 
 };

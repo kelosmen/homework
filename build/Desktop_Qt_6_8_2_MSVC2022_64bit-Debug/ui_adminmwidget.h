@@ -23,7 +23,7 @@ public:
     {
         if (AdminMWidget->objectName().isEmpty())
             AdminMWidget->setObjectName("AdminMWidget");
-        AdminMWidget->resize(400, 300);
+        AdminMWidget->resize(648, 428);
 
         retranslateUi(AdminMWidget);
 
@@ -32,7 +32,7 @@ public:
 
     void retranslateUi(QWidget *AdminMWidget)
     {
-        AdminMWidget->setWindowTitle(QCoreApplication::translate("AdminMWidget", "Form", nullptr));
+        AdminMWidget->setWindowTitle(QCoreApplication::translate("AdminMWidget", "\347\256\241\347\220\206\345\221\230\347\225\214\351\235\242", nullptr));
     } // retranslateUi
 
 };

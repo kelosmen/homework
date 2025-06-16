@@ -1,4 +1,5 @@
 QT       += core gui
+QT       +=core sql#添加数据库模块
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -11,18 +12,21 @@ CONFIG += c++17
 SOURCES += \
     adminmwidget.cpp \
     customermwidget.cpp \
+    dialog_register.cpp \
     main.cpp \
     dialog_login.cpp
 
 HEADERS += \
     adminmwidget.h \
     customermwidget.h \
-    dialog_login.h
+    dialog_login.h \
+    dialog_register.h
 
 FORMS += \
     adminmwidget.ui \
     customermwidget.ui \
-    dialog_login.ui
+    dialog_login.ui \
+    dialog_register.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

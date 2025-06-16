@@ -4,6 +4,8 @@
 #include <QDialog>
 #include"customermwidget.h"
 #include"adminmwidget.h"
+#include"dialog_register.h"
+#include<QMessageBox>
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class Dialog_Login;
@@ -21,11 +23,14 @@ public:
 private slots:
     void on_pushButton_login_clicked();
 
+    void on_pushButton_register_clicked();
+
 private:
     Ui::Dialog_Login *ui;
     //定义界面的指针变量
     CustomerMWdiget* customerwidget;//顾客的主界面
     AdminMWidget* adminmwidget;//管理员的主界面
+    Dialog_register* dialog_register;//注册页面对话框
 };
 
 #endif // DIALOG_LOGIN_H
