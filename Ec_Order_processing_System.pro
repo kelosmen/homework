@@ -14,13 +14,15 @@ SOURCES += \
     customermwidget.cpp \
     dialog_register.cpp \
     main.cpp \
-    dialog_login.cpp
+    dialog_login.cpp \
+    myapp.cpp
 
 HEADERS += \
     adminmwidget.h \
     customermwidget.h \
     dialog_login.h \
-    dialog_register.h
+    dialog_register.h \
+    myapp.h
 
 FORMS += \
     adminmwidget.ui \
