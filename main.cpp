@@ -21,7 +21,8 @@ int main(int argc, char *argv[])
     if(db.open()){
         qDebug()<<"yes";
     }
-    else {qDebug()<<"no";}
+    //else {qDebug()<<"no";}
+    //qDebug()<<Myapp::hashPassword("123456");
     Dialog_Login w;
     w.show();
     return a.exec();

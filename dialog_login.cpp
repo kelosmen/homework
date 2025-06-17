@@ -6,6 +6,7 @@ Dialog_Login::Dialog_Login(QWidget *parent)
     , ui(new Ui::Dialog_Login)
 {
     ui->setupUi(this);
+    ui->lineEdit_UPassword->setEchoMode(QLineEdit::Password);//使屏幕上不显示密码
 
 }
 
@@ -21,10 +22,12 @@ bool Dialog_Login::verifyLogin(const QString &username, const QString &password)
     if(ui->radioButton_customer->isChecked())//顾客身份
     {
         query.prepare("SELECT password FROM customer WHERE name = :username");//此处的：username是占位符，后续提供值
+        Myapp::CurrentUserType="customer";
     }
     if(ui->radioButton_admin->isChecked())
     {
         query.prepare("SELECT password FROM staff WHERE name = :username");
+          Myapp::CurrentUserType="admin";
     }
     query.bindValue(":username", username);
 
@@ -34,8 +37,9 @@ bool Dialog_Login::verifyLogin(const QString &username, const QString &password)
     }
 
     if (query.next()) {
+        QString hashpassword=Myapp::hashPassword(password);
         QString storedPassword = query.value(0).toString();
-        return storedPassword == password;
+        return storedPassword == hashpassword;
     } else {
         return false;
     }
@@ -55,23 +59,25 @@ void Dialog_Login::on_pushButton_login_clicked()
             {
         customerwidget=new CustomerMWdiget;
                 customerwidget->show();
+                this->close();
             }
 
     }
     else if(ui->radioButton_admin->isChecked()){//管理员身份
             if(verifyLogin(user_name,user_pwd))
             {
-                customerwidget=new CustomerMWdiget;
-                customerwidget->show();
+                adminmwidget=new AdminMWidget;
+                adminmwidget->show();
+                this->close();
             }
-        adminmwidget=new AdminMWidget;
-        adminmwidget->show();
+
     }
     else{
           QMessageBox::warning(this, "警告", "请选择身份");
     }
 
        }
+
 
 
 }

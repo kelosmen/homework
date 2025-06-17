@@ -1,6 +1,7 @@
 #include "dialog_register.h"
 #include "ui_dialog_register.h"
 #include"myapp.h"
+#include<QDebug>
 Dialog_register::Dialog_register(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog_register)
@@ -26,7 +27,6 @@ void Dialog_register::on_pB_confirm_clicked()
     QString email=ui->cstm_email->text();
     QString phone_number=ui->cstm_pnum->text();
     QString address=ui->cstm_address->text();
-    QSqlQuery query;
     if(password!=Repassword){
         QMessageBox::information(this,"提示","两次密码不同");
         this->close();
@@ -34,8 +34,17 @@ void Dialog_register::on_pB_confirm_clicked()
    Myapp::CurrentUserHashPwd=Myapp::hashPassword(password);
     Myapp::CurrentUserName=name;
 
-    QString str=QString("INSERT INTO customer (name,password,email,phone_number,address) values('%1','%2','%3','%4','%5')").arg(name).arg( Myapp::CurrentUserHashPwd).arg(email).arg(phone_number).arg(address);
-    if(query.exec(str)==false)
+   QSqlQuery query;
+
+   query.prepare("INSERT INTO customer (name, password, email, phone_number, address) "
+                 "VALUES (:name, :password, :email, :phone_number, :address)");
+
+   query.bindValue(":name", name);
+   query.bindValue(":password", Myapp::CurrentUserHashPwd);
+   query.bindValue(":email", email);
+   query.bindValue(":phone_number", phone_number);
+   query.bindValue(":address", address);
+    if(!query.exec())
     {
         QMessageBox::information(this,"提示","注册失败");
 
