@@ -2,7 +2,10 @@
 #define DIALOG_REGISTER_H
 
 #include <QDialog>
-
+#include<QSqlDatabase>
+#include<QSqlQuery>
+#include<QSqlQueryModel>
+#include<QMessageBox>
 namespace Ui {
 class Dialog_register;
 }

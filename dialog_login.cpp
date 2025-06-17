@@ -1,24 +1,11 @@
 #include "dialog_login.h"
 #include "ui_dialog_login.h"
-#include<QSqlDatabase>
-#include<QDebug>
-#include<QSqlError>
 Dialog_Login::Dialog_Login(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::Dialog_Login)
 {
     ui->setupUi(this);
-    QSqlDatabase db=QSqlDatabase::addDatabase("QSQLITE");
-    db.setHostName("localhost");
-    db.setUserName("root");
-    db.setDatabaseName("customer");
-    db.setPassword("123456");
-    if(!db.open()){
-        qDebug()<<"失败的原因："<<db.lastError().text();
-    }
-    else{
-        qDebug()<<"连接成功";
-    }
+
 }
 
 

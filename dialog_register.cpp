@@ -21,6 +21,26 @@ void Dialog_register::on_pB_cancel_clicked()
 
 void Dialog_register::on_pB_confirm_clicked()
 {
+    QString name=ui->cstm_name->text();
+    QString password=ui->cstm_pwd->text();
+    QString Repassword=ui->cstm_repsd->text();
+    QString email=ui->cstm_email->text();
+    QString phone_number=ui->cstm_pnum->text();
+    QString address=ui->cstm_address->text();
+    QSqlQuery query;
+    if(password!=Repassword){
+        QMessageBox::information(this,"提示","两次密码不同");
+        this->close();
+    }
 
+    QString str=QString("INSERT INTO customer (name,password,email,phone_number,address) values('%1','%2','%3','%4','%5')").arg(name).arg(password).arg(email).arg(phone_number).arg(address);
+    if(query.exec(str)==false)
+    {
+        QMessageBox::information(this,"提示","注册失败");
+
+    }
+    else{
+        QMessageBox::information(this,"提示","注册成功，请返回登录");
+    }
 }
 
